@@ -1,4 +1,4 @@
-for setup this project on your localhost
+Initial setup for run this project on your localhost:
 
 ## `npm install`
 
