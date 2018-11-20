@@ -1,6 +1,6 @@
 const initState = {}
 
-const AuthReducers = (state = initState, action) => { 
+const AuthReducers = (state = initState, action) => {
   return state
 }
 

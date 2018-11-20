@@ -1,31 +1,33 @@
 const initState = {
-  projects:[
+  projects: [
     {
-      id:1,
-      title: 'learn html & css',
-      content: 'lorem blah blah blah'
+      id: 1,
+      title: "Learn React with Redux",
+      content: "Course description goes here"
     },
     {
-      id:2,
-      title: 'learn React',
-      content: 'lorem blah blah blah'
+      id: 2,
+      title: "Learn PHP with Laravel",
+      content: "Course description goes here"
     },
     {
-      id:3,
-      title: 'learn Node',
-      content: 'lorem blah blah blah'
+      id: 3,
+      title: "Learn Node with MongoDB & express",
+      content: "Course description goes here"
     }
   ]
-}
+};
 
 const ProjectReducers = (state = initState, action) => {
-  switch(action.type) {
-    case 'CREATE_USER':
-    console.log('created project', action.project)
-    default :
-    return state
-  } 
-  return state
-}
-
+  switch (action.type) {
+    case "CREATE_PROJECT":
+      console.log("created", action.project);
+      return state;
+    case "CREATE_PROJECT_ERROR":
+      console.log("created project error", action.err);
+      return state;
+    default:
+      return state;
+  }
+};
 export default ProjectReducers;
