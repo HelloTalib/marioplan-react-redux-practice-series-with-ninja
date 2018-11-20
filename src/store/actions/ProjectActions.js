@@ -5,9 +5,8 @@ export const createProject = project => {
       .collection("projects")
       .add({
         ...project,
-        firstName: "Surovi",
-        lastName: "Akter",
-        createdAt: new Date()
+        created: (new Date(),"dddd, mmmm dS, yyyy, h:MM:ss TT")
+    
       })
       .then(() => {
         dispatch({ type: "CREATE_PROJECT", project });

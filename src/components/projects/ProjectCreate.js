@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 class ProjectCreate extends Component {
   state = {
     title: "",
-    content: ""
+    content: "",
+    firstName: "",
+    lastName: ""
   };
   handleChange = e => {
     this.setState({
@@ -16,7 +18,9 @@ class ProjectCreate extends Component {
     this.props.createProject(this.state);
     this.setState({
       title: "",
-      content: ""
+      content: "",
+      firstName: "",
+      lastName: ""
     });
   };
 
@@ -43,6 +47,24 @@ class ProjectCreate extends Component {
               value={this.state.content}
             />
           </div>
+          <div className="input-field">
+            <label htmlFor="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              onChange={this.handleChange}
+              value={this.state.firstName}
+            />
+          </div>
+          <div className="input-field">
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              onChange={this.handleChange}
+              value={this.state.lastName}
+            />
+          </div>
           <button className="btn red darken-3 z-depth-0">Create</button>
         </form>
       </div>
@@ -56,4 +78,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(ProjectCreate);
+export default connect(
+  null,
+  mapDispatchToProps
+)(ProjectCreate);
